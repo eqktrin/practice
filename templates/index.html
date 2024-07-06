@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск работы</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5); /* Градиентный фон */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333; /* Цвет текста */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff; /* Белый цвет текста для контраста */
+            background: -webkit-linear-gradient(left, #74ebd5, #acb6e5);
+            -webkit-background-clip: text;
+            animation: fadeIn 2s ease-in-out;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для глубины */
+        }
+        nav {
+            background-color: #fff; /* Базовый цвет фона */
+            background-image: linear-gradient(to bottom right, #fdfbfb, #ebedee); /* Градиентный фон */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            margin: auto; /* Автоматические отступы для центрирования */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center; /* Выравнивание по центру */
+        }
+        nav ul li {
+            margin: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff; /* Белый цвет текста */
+            background: linear-gradient(to right, #f857a6, #ff5858); /* Градиент для кнопок */
+            padding: 15px 30px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Тень кнопки */
+            font-size: 18px;
+            font-weight: bold; /* Жирный шрифт */
+            border: 2px solid transparent; /* Прозрачная граница для градиента */
+            background-clip: padding-box; /* Ограничение фона внутренним отступом */
+            position: relative; /* Для псевдоэлемента */
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: -2px; right: -2px; bottom: -2px; left: -2px;
+            z-index: -1;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            border-radius: inherit; /* Радиус границы как у элемента */
+            transition: opacity 0.3s;
+            opacity: 0; /* Скрытие градиента по умолчанию */
+        }
+        nav a:hover::before {
+            opacity: 1; /* Показ градиента при наведении */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Добро пожаловать на сайт поиска работы</h1>
+        <nav>
+            <ul>
+                <li><a href="/vacancies">Поиск вакансий</a></li>
+                <li><a href="/resumes">Поиск резюме</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

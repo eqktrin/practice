@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список резюме</title>
+    <style>
+        /* Стили остаются такими же, как в вашем предыдущем коде */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 50px 0;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #633F83;
+            color: #fff;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        tr:last-of-type {
+            border-bottom: 2px solid #4e54c8;
+        }
+        .button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #633F83;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            color: #633F83;
+            font-size: 50px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Список резюме</h2>
+    <table>
+        <tr>
+            <th>ФИО</th>
+            <th>Желаемая должность</th>
+            <th>Город</th>
+        </tr>
+        {% for resume in resumes %}
+        <tr>
+            <td>{{ resume.name }}</td>
+            <td>{{ resume.desired_position }}</td>
+            <td>{{ resume.location }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="button-container">
+        <a href="/vacancies" class="button">Вакансии</a>
+        <a href="/resumes" class="button">Резюме</a>
+    </div>
+</body>
+</html>
